@@ -84,13 +84,18 @@ end_loop:
 	printf("BINARY: ");
 	print_binary(is_32, raw_bits, 0);
 	putchar('\n');
-	printf("UINT%d: %" PRIu64 "\n"
-	       " INT%d: %" PRId64 "\n",
-	       is_32 ? 32 : 64, raw_bits,
-	       is_32 ? 32 : 64, (int64_t)raw_bits);
+
 	if (is_32) {
+		printf("UINT32: %" PRIu32 "\n"
+		       " INT32: %" PRId32 "\n",
+		       (uint32_t)raw_bits,
+		       (int32_t)raw_bits);
 		printf(" FLOAT: %.*E\n", precision, *float_bits);
 	} else {
+		printf("UINT64: %" PRIu64 "\n"
+		       " INT64: %" PRId64 "\n",
+		       raw_bits,
+		       (int64_t)raw_bits);
 		printf("DOUBLE: %.*lE\n", precision, *double_bits);
 	}
 	return 0;
