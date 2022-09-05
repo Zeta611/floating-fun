@@ -22,8 +22,8 @@ void print_binary(int is_32, uint64_t n, int index)
 		return;
 	}
 	print_binary(is_32, n >> 1, index + 1);
-	if ((is_32 && (index == 22 || index == 30)
-	     || (!is_32 && (index == 62 || index == 51)))
+	if ((is_32 && (index == 22 || index == 30))
+	     || (!is_32 && (index == 62 || index == 51))
 	) {
 		putchar('|');
 	}
